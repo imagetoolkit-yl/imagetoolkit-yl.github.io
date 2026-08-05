@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 툴킷 | PNG 외곽선·캔버스 맞춤</title>
+    <meta
+      name="description"
+      content="투명 PNG를 안전 여백에 맞춰 리사이징하고 깔끔한 외곽선을 추가하는 무료 브라우저 이미지 도구입니다. 이미지가 서버로 업로드되지 않습니다."
+    />
+    <meta
+      name="keywords"
+      content="PNG 외곽선, PNG 스트로크, 이미지 리사이즈, 캔버스 맞춤, 이모티콘 이미지, OGQ 이미지, transparent PNG outline"
+    />
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem("imageToolkitLanguage");
+          const locale = saved === "ko" || saved === "en"
+            ? saved
+            : navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
+          document.documentElement.lang = locale;
+          document.documentElement.dataset.locale = locale;
+        } catch (error) {
+          document.documentElement.lang = "ko";
+          document.documentElement.dataset.locale = "ko";
+        }
+      })();
+    </script>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css?v=15" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-layout">
+        <a class="brand" href="index.html" data-i18n-aria-label="aria.home">
+          <span class="brand-mark">IT</span>
+          <span>Image Toolkit</span>
+        </a>
+        <div class="header-actions">
+          <nav class="top-nav" data-i18n-aria-label="aria.primaryNav">
+            <a href="#png-outline-tool" data-i18n="nav.canvasOutline">캔버스 맞춤·외곽선</a>
+            <a href="guide.html">Guide</a>
+            <a href="guides/index.html">Image Guides</a>
+            <a href="faq.html">FAQ</a>
+            <a href="about.html">About</a>
+          </nav>
+          <div class="language-switcher" role="group" data-i18n-aria-label="aria.languageSelector">
+            <button class="language-button" type="button" data-language="ko" aria-pressed="true">한국어</button>
+            <span aria-hidden="true">|</span>
+            <button class="language-button" type="button" data-language="en" aria-pressed="false">English</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="hero.eyebrow">무료 온라인 이미지 편집 도구</p>
+            <h1>Image Toolkit</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">빠르고 안전한 브라우저 기반 이미지 편집 도구입니다.</p>
+          </div>
+          <div class="hero-panel" data-i18n-aria-label="aria.highlights">
+            <div>
+              <strong data-i18n="hero.privateTitle">안전한 처리</strong>
+              <span data-i18n="hero.privateText">이미지는 브라우저 안에서만 처리됩니다.</span>
+            </div>
+            <div>
+              <strong data-i18n="hero.fastTitle">빠른 작업</strong>
+              <span data-i18n="hero.fastText">서버 업로드 없이 바로 처리합니다.</span>
+            </div>
+            <div>
+              <strong data-i18n="hero.expandableTitle">규격 중심</strong>
+              <span data-i18n="hero.expandableText">OGQ 제출용 이미지 규격을 빠르게 준비합니다.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="png-outline-tool" class="tool-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="tool.eyebrow">첫 번째 도구</p>
+            <h2 data-i18n="tool.title">캔버스 맞춤(Canvas Fit)·PNG 외곽선</h2>
+            <p data-i18n="tool.description">투명 이미지를 안전 여백 안에 맞춘 뒤, 브라우저에서 깔끔한 외곽선을 추가하세요.</p>
+          </div>
+
+          <div class="tool-shell">
+            <section class="upload-panel" aria-labelledby="upload-title">
+              <h3 id="upload-title" data-i18n="upload.title">PNG 이미지 업로드</h3>
+              <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-describedby="upload-help">
+                <span class="drop-icon" aria-hidden="true">+</span>
+                <strong data-i18n="upload.dropTitle">PNG, JPG, JPEG 파일을 여기에 놓으세요</strong>
+                <span id="upload-help" data-i18n="upload.help">여러 장을 선택할 수 있으며, 파일은 브라우저 밖으로 전송되지 않습니다.</span>
+                <button id="select-images-button" class="button button-primary" type="button" data-i18n="upload.selectButton">이미지 선택</button>
+              </div>
+              <input
+                id="image-input"
+                class="file-input"
+                type="file"
+                accept="image/png,image/jpeg"
+                multiple
+              />
+            </section>
+
+            <section class="options-panel" aria-labelledby="options-title">
+              <h3 id="options-title" data-i18n="options.title">설정</h3>
+              <div class="options-stack">
+                <div class="option-group">
+                  <h4 data-i18n="canvas.title">캔버스 맞춤(Canvas Fit)</h4>
+                  <div class="form-grid two-columns">
+                    <label for="canvas-width-input">
+                      <span data-i18n="canvas.width">캔버스 너비</span>
+                      <input id="canvas-width-input" type="number" min="1" step="1" value="740" />
+                    </label>
+                    <label for="canvas-height-input">
+                      <span data-i18n="canvas.height">캔버스 높이</span>
+                      <input id="canvas-height-input" type="number" min="1" step="1" value="640" />
+                    </label>
+                  </div>
+                  <p class="panel-note compact-note"><span data-i18n="canvas.safeMargin">안전 여백</span>: <strong id="safe-margin-value">40px</strong></p>
+                  <button id="apply-canvas-fit-button" class="button button-primary full-width-button" type="button" data-i18n="canvas.applyButton">
+                    캔버스 맞춤 적용
+                  </button>
+                </div>
+
+                <div class="option-group ogq-preset-group">
+                  <div class="preset-heading-row">
+                    <div>
+                      <p class="preset-kicker" data-i18n="preset.kicker">네이버 OGQ</p>
+                      <h4 data-i18n="preset.title">네이버 OGQ 심사 규격 이미지 만들기</h4>
+                    </div>
+                    <a class="preset-guide-link" href="guides/ogq-emoticon.html" data-i18n="preset.guideLink">규격 가이드</a>
+                  </div>
+                  <p class="panel-note compact-note" data-i18n="preset.description">
+                    실제 그림 영역을 기준으로 일반 이미지, 대표 이미지, 탭 이미지를 바로 만듭니다.
+                  </p>
+                  <div class="preset-actions ogq-preset-actions">
+                    <button id="create-ogq-image-button" class="button button-primary preset-action-wide" type="button" data-i18n="preset.ogqButton">
+                      740×640 일반 이미지 만들기
+                    </button>
+                    <button id="create-main-image-button" class="button button-secondary" type="button" data-i18n="preset.mainButton">
+                      240×240 대표 이미지 만들기
+                    </button>
+                    <button id="create-tab-image-button" class="button button-secondary" type="button" data-i18n="preset.tabButton">
+                      96×74 탭 이미지 만들기
+                    </button>
+                  </div>
+                  <p class="preset-disclaimer" data-i18n="preset.disclaimer">
+                    Image Toolkit은 OGQ 공식 도구가 아닙니다. 제출 전 최신 OGQ 가이드를 확인하세요.
+                  </p>
+                </div>
+
+                <div class="option-group">
+                  <h4 data-i18n="outline.title">외곽선(Outline)</h4>
+                  <div class="form-grid">
+                    <label for="thickness-input">
+                      <span class="label-row">
+                        <span data-i18n="outline.thickness">외곽선 두께</span>
+                        <strong><span id="thickness-value">8</span>px</strong>
+                      </span>
+                      <input id="thickness-input" type="range" min="1" max="32" value="8" />
+                    </label>
+                    <label for="color-input">
+                      <span data-i18n="outline.color">외곽선 색상</span>
+                      <input id="color-input" type="color" value="#ffffff" />
+                    </label>
+                  </div>
+                  <div class="option-actions">
+                    <button id="apply-outline-button" class="button button-primary" type="button" data-i18n="outline.applyButton">
+                      외곽선 적용
+                    </button>
+                    <button id="reset-options-button" class="button button-secondary" type="button" data-i18n="options.resetButton">
+                      설정 초기화
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p id="process-summary" class="panel-note" data-i18n="process.initial">이미지를 올린 뒤 캔버스 맞춤이나 외곽선을 적용하세요.</p>
+            </section>
+          </div>
+
+          <section class="preview-section" aria-labelledby="preview-title">
+            <div class="section-row">
+              <div>
+                <h3 id="preview-title" data-i18n="preview.title">미리보기</h3>
+                <p id="upload-summary">0개 이미지 업로드됨</p>
+              </div>
+              <button id="download-zip-button" class="button button-secondary" type="button" disabled data-i18n="preview.downloadZip">
+                ZIP 일괄 다운로드
+              </button>
+            </div>
+            <div id="preview-empty" class="preview-empty">
+              <span class="preview-icon" aria-hidden="true"></span>
+              <strong data-i18n="preview.emptyTitle">아직 이미지가 없습니다</strong>
+              <span data-i18n="preview.emptyText">이미지를 올리면 원본, 캔버스 맞춤 결과, 외곽선 결과를 미리 볼 수 있습니다.</span>
+            </div>
+            <div id="preview-grid" class="preview-grid" aria-live="polite"></div>
+          </section>
+        </div>
+      </section>
+
+
+      <section id="current-features" class="features-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="features.eyebrow">지금 사용할 수 있어요</p>
+            <h2 data-i18n="features.title">현재 제공하는 기능</h2>
+            <p data-i18n="features.description">실제로 작동하고 브라우저에서 바로 사용할 수 있는 기능만 안내합니다.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><strong>Canvas Fit</strong><span data-i18n="features.canvasFit">투명 여백을 제외한 실제 그림을 안전 여백 안에 맞춥니다.</span></article>
+            <article class="feature-card"><strong>PNG Outline</strong><span data-i18n="features.outline">두께와 색상을 선택해 PNG 외곽선을 만듭니다.</span></article>
+            <article class="feature-card"><strong>740×640</strong><span data-i18n="features.ogqStandard">네이버 OGQ 일반 이미지를 만듭니다.</span></article>
+            <article class="feature-card"><strong>240×240 main.png</strong><span data-i18n="features.mainImage">OGQ 대표 이미지를 자동 생성합니다.</span></article>
+            <article class="feature-card"><strong>96×74 tab.png</strong><span data-i18n="features.tabImage">그림이 점처럼 작아지지 않도록 탭 이미지를 만듭니다.</span></article>
+            <article class="feature-card"><strong>ZIP</strong><span data-i18n="features.zip">여러 이미지의 최신 결과를 한 번에 다운로드합니다.</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="future-section"><div class="container"><div class="section-heading"><p class="eyebrow">Learn</p><h2 data-ko="이미지 제작 가이드" data-en="Image production guides">이미지 제작 가이드</h2><p data-ko="규격만 맞추는 것이 아니라, 왜 이미지가 작아지거나 외곽선이 잘리는지 이해하고 해결하세요." data-en="Learn why artwork becomes tiny or outlines get clipped, not just which dimensions to enter.">규격 오류의 원인과 해결법을 함께 확인하세요.</p></div><div class="guide-grid"><article class="guide-card guide-card-featured"><h3 data-ko="네이버 OGQ 심사 규격 가이드" data-en="Naver OGQ submission size guide">네이버 OGQ 심사 규격 가이드</h3><p data-ko="740×640 일반 이미지, 240×240 main.png, 96×74 tab.png를 한 번에 준비하는 방법입니다." data-en="Prepare 740×640 artwork, 240×240 main.png, and 96×74 tab.png in one workflow.">OGQ 제출용 이미지 3종을 한 번에 준비하세요.</p><a href="guides/ogq-emoticon.html" data-ko="OGQ 가이드 보기 →" data-en="Read OGQ guide →">OGQ 가이드 보기 →</a></article><article class="guide-card"><h3 data-ko="Canvas Fit 이해하기" data-en="Understand Canvas Fit">Canvas Fit 이해하기</h3><p data-ko="투명 여백을 제외한 실제 그림을 안전 영역에 맞추는 원리를 설명합니다." data-en="How visible alpha bounds are fitted inside a safe area.">투명 여백을 제외한 실제 그림을 맞춥니다.</p><a href="guides/canvas-fit.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article><article class="guide-card"><h3 data-ko="외곽선 잘림 해결" data-en="Prevent outline clipping">외곽선 잘림 해결</h3><p data-ko="그림이 캔버스 끝에 붙을 때 생기는 문제와 해결 순서를 확인하세요." data-en="Why outlines clip at edges and the correct workflow.">잘림 원인과 해결 순서를 확인하세요.</p><a href="guides/png-outline.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article><article class="guide-card"><h3 data-ko="96×74 탭 이미지" data-en="96×74 tab image">96×74 탭 이미지</h3><p data-ko="1×2px 점처럼 축소되지 않게 만드는 정확한 안전 여백과 비율입니다." data-en="Correct scaling and margins that prevent tiny-dot results.">점처럼 작아지는 문제를 해결합니다.</p><a href="guides/tab-image.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article><article class="guide-card"><h3 data-ko="240×240 대표 이미지" data-en="240×240 main image">240×240 대표 이미지</h3><p data-ko="투명 배경과 비율을 유지하며 캐릭터를 크게 배치하는 방법입니다." data-en="Keep transparency and aspect ratio while filling the frame.">비율을 유지하며 크게 배치합니다.</p><a href="guides/main-image.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article></div></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-stack"><div class="footer-layout"><span>Image Toolkit</span><span data-i18n="footer.text">간단하고 안전한 브라우저 기반 이미지 도구</span></div><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><a href="mailto:yltoolkit@gmail.com">yltoolkit@gmail.com</a><a href="sitemap.xml">Sitemap</a></div><p class="footer-update" data-ko="최종 업데이트: 2026년 8월 5일" data-en="Last updated: August 5, 2026">최종 업데이트: 2026년 8월 5일</p></div></footer>
+
+    <script src="tools/outline/outline-engine.js?v=8"></script>
+    <script src="tools/outline/download-utils.js?v=7"></script>
+    <script src="tools/outline/zip-writer.js?v=7"></script>
+    <script src="script.js?v=13"></script>
+    <script src="site-common.js?v=2"></script>
+  </body>
+</html>

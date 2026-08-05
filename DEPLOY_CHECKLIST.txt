@@ -1,0 +1,22 @@
+ImageToolkit AdSense readiness content package — 2026-08-05
+
+1. Copy all files and folders into the imagetoolkit-yl.github.io repository root.
+2. Preserve the existing tools/ folder and script.js.
+3. Open index.html and confirm the main image tool still works.
+4. Check About, Guide, Image Guides, FAQ, Privacy, Terms, Contact links.
+5. Commit and push in GitHub Desktop.
+6. After GitHub Pages deploys, verify:
+   /about.html
+   /privacy.html
+   /robots.txt
+   /sitemap.xml
+7. Add the site to Google Search Console and submit sitemap.xml.
+8. Do not create ads.txt until the actual AdSense publisher ID is known.
+9. Do not add AdSense ad code until policy pages and live-site QA are complete.
+
+AdSense readiness final pass (2026-08-05)
+- Removed visible "future tools" / development roadmap section
+- Added completed-features section listing only working tools
+- Added real OGQ troubleshooting experience and submission checklist
+- Confirmed privacy, terms, contact, robots.txt, sitemap.xml, 404 page
+- Do not add ads.txt until the real AdSense publisher ID is available

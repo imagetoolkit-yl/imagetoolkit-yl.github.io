@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imagetoolkit-yl.github.io/sitemap.xml
