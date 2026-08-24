@@ -796,6 +796,23 @@ input[type="number"] {
 .language-button.is-active{color:var(--primary);font-weight:800}
 @media(max-width:800px){.content-layout{grid-template-columns:1fr}.sidebar-card{position:static}.guide-grid{grid-template-columns:1fr}.article-card{padding:22px}.content-nav{display:none}}
 
+/* Long-form guides */
+.breadcrumbs{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:0 0 18px;color:var(--muted);font-size:14px}
+.breadcrumbs a{color:var(--primary)}
+.article-card table{width:100%;border-collapse:collapse;margin:20px 0}
+.article-card th,.article-card td{padding:12px;text-align:left;vertical-align:top;border:1px solid var(--line)}
+.article-card th{background:#f8fafc}
+.article-card .related-links{display:grid;gap:10px;margin-top:16px}
+.article-card .related-links a{color:var(--primary);font-weight:700}
+.home-content{padding:64px 0}
+.home-content .article-card{max-width:980px;margin:0 auto}
+@media(max-width:760px){
+  .header-layout{display:block}.brand{display:inline-flex;margin-bottom:10px}.header-actions{align-items:stretch}
+  .top-nav,.content-nav{display:flex;overflow-x:auto;white-space:nowrap;padding:4px 0 8px;scrollbar-width:thin}
+  .language-switcher{align-self:flex-end}.page-main{padding-top:26px}.page-hero{padding-top:24px}
+  .article-card{overflow:hidden}.table-scroll{overflow-x:auto}.article-card table{min-width:560px}
+}
+
 /* Naver OGQ preset section */
 .ogq-preset-group {
   border-color: rgba(45, 104, 220, 0.24);
