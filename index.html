@@ -1,26 +1,22 @@
 <!doctype html>
 <html lang="ko">
   <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259538571603783"
-       crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5259538571603783" crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이미지 툴킷 | PNG 외곽선·캔버스 맞춤</title><link rel="canonical" href="https://imagetoolkit-yl.github.io/"><meta property="og:type" content="website"><meta property="og:title" content="이미지 툴킷 | PNG 외곽선·캔버스 맞춤"><meta property="og:description" content="투명 이미지의 실제 그림 영역을 안전 여백에 맞추고 외곽선과 규격 이미지를 브라우저에서 일괄 생성합니다."><meta property="og:url" content="https://imagetoolkit-yl.github.io/">
-    <meta
-      name="description"
-      content="투명 PNG를 안전 여백에 맞춰 리사이징하고 깔끔한 외곽선을 추가하는 무료 브라우저 이미지 도구입니다. 이미지가 서버로 업로드되지 않습니다."
-    />
-    <meta
-      name="keywords"
-      content="PNG 외곽선, PNG 스트로크, 이미지 리사이즈, 캔버스 맞춤, 이모티콘 이미지, OGQ 이미지, transparent PNG outline"
-    />
+    <title>ImageToolkit | 브라우저 이미지 크기 조절·압축·변환</title>
+    <meta name="description" content="이미지 크기 조절, 압축, PNG·JPEG·WebP 변환, 캔버스 맞춤, 외곽선과 일괄 처리를 브라우저에서 바로 실행하세요." />
+    <meta name="keywords" content="이미지 크기 조절, 이미지 압축, 이미지 변환, Canvas Fit, 이미지 외곽선, 일괄 이미지 처리, OGQ 이미지" />
+    <link rel="canonical" href="https://imagetoolkit-yl.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="ImageToolkit | 브라우저 이미지 도구" />
+    <meta property="og:description" content="크기 조절, 압축, 변환, 맞춤, 외곽선과 일괄 작업을 브라우저에서 바로 처리하세요." />
+    <meta property="og:url" content="https://imagetoolkit-yl.github.io/" />
     <script>
       (() => {
         try {
           const saved = localStorage.getItem("imageToolkitLanguage");
-          const locale = saved === "ko" || saved === "en"
-            ? saved
-            : navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
+          const locale = saved === "ko" || saved === "en" ? saved : navigator.language.toLowerCase().startsWith("ko") ? "ko" : "en";
           document.documentElement.lang = locale;
           document.documentElement.dataset.locale = locale;
         } catch (error) {
@@ -30,27 +26,23 @@
       })();
     </script>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="style.css?v=16" />
+    <link rel="stylesheet" href="style.css?v=21" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"ImageToolkit","url":"https://imagetoolkit-yl.github.io/","description":"Browser-based tools for resizing, compressing, converting, fitting, outlining, and batch-processing images."}</script>
   </head>
   <body>
     <header class="site-header">
       <div class="container header-layout">
-        <a class="brand" href="index.html" data-i18n-aria-label="aria.home">
-          <span class="brand-mark">IT</span>
-          <span>Image Toolkit</span>
-        </a>
+        <a class="brand" href="index.html" aria-label="ImageToolkit 홈"><span class="brand-mark">IT</span><span>Image Toolkit</span></a>
         <div class="header-actions">
-          <nav class="top-nav" data-i18n-aria-label="aria.primaryNav">
-            <a href="#png-outline-tool" data-i18n="nav.canvasOutline">캔버스 맞춤·외곽선</a>
-            <a href="guide.html">사용법</a>
-            <a href="guides/index.html">이미지 가이드</a>
+          <nav class="top-nav" aria-label="주요 메뉴">
+            <a href="tools/index.html" data-ko="도구" data-en="Tools">도구</a>
+            <a href="presets/index.html" data-ko="플랫폼 규격" data-en="Presets">플랫폼 규격</a>
+            <a href="guides/index.html" data-ko="가이드" data-en="Guides">가이드</a>
             <a href="faq.html">FAQ</a>
-            <a href="about.html">소개</a>
+            <a href="about.html" data-ko="소개" data-en="About">소개</a>
           </nav>
-          <div class="language-switcher" role="group" data-i18n-aria-label="aria.languageSelector">
-            <button class="language-button" type="button" data-language="ko" aria-pressed="true">한국어</button>
-            <span aria-hidden="true">|</span>
-            <button class="language-button" type="button" data-language="en" aria-pressed="false">English</button>
+          <div class="language-switcher" role="group" aria-label="언어 선택">
+            <button class="language-button" type="button" data-language="ko" aria-pressed="true">한국어</button><span aria-hidden="true">|</span><button class="language-button" type="button" data-language="en" aria-pressed="false">English</button>
           </div>
         </div>
       </div>
@@ -60,184 +52,67 @@
       <section class="hero-section">
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow" data-i18n="hero.eyebrow">무료 온라인 이미지 편집 도구</p>
+            <p class="eyebrow" data-ko="브라우저 이미지 도구" data-en="Browser image tools">브라우저 이미지 도구</p>
             <h1>Image Toolkit</h1>
-            <p class="hero-subtitle" data-i18n="hero.subtitle">빠르고 안전한 브라우저 기반 이미지 편집 도구입니다.</p>
+            <p class="hero-subtitle" data-ko="크기 조절, 압축, 변환, 맞춤, 외곽선과 일괄 작업을 한곳에서 처리하세요." data-en="Resize, compress, convert, fit, outline, and batch-process images in one place.">크기 조절, 압축, 변환, 맞춤, 외곽선과 일괄 작업을 한곳에서 처리하세요.</p>
           </div>
-          <div class="hero-panel" data-i18n-aria-label="aria.highlights">
-            <div>
-              <strong data-i18n="hero.privateTitle">안전한 처리</strong>
-              <span data-i18n="hero.privateText">이미지는 브라우저 안에서만 처리됩니다.</span>
-            </div>
-            <div>
-              <strong data-i18n="hero.fastTitle">빠른 작업</strong>
-              <span data-i18n="hero.fastText">서버 업로드 없이 바로 처리합니다.</span>
-            </div>
-            <div>
-              <strong data-i18n="hero.expandableTitle">규격 중심</strong>
-              <span data-i18n="hero.expandableText">OGQ 제출용 이미지 규격을 빠르게 준비합니다.</span>
-            </div>
+          <div class="hero-panel" aria-label="ImageToolkit 특징">
+            <div><strong data-ko="안전한 처리" data-en="Private processing">안전한 처리</strong><span data-ko="이미지는 브라우저 안에서만 처리됩니다." data-en="Images are processed only in your browser.">이미지는 브라우저 안에서만 처리됩니다.</span></div>
+            <div><strong data-ko="빠른 작업" data-en="Fast workflow">빠른 작업</strong><span data-ko="서버 업로드 없이 바로 처리합니다." data-en="Work immediately without uploading files to a server.">서버 업로드 없이 바로 처리합니다.</span></div>
+            <div><strong data-ko="범용 도구와 플랫폼 규격" data-en="General tools and presets">범용 도구와 플랫폼 규격</strong><span data-ko="일반 이미지 작업과 플랫폼별 규격을 함께 제공합니다." data-en="Use general image tools alongside platform-specific presets.">일반 이미지 작업과 플랫폼별 규격을 함께 제공합니다.</span></div>
           </div>
         </div>
       </section>
 
-      <section id="png-outline-tool" class="tool-section">
+      <section class="features-section home-tools-section">
         <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow" data-i18n="tool.eyebrow">첫 번째 도구</p>
-            <h2 data-i18n="tool.title">캔버스 맞춤(Canvas Fit)·PNG 외곽선</h2>
-            <p data-i18n="tool.description">투명 이미지를 안전 여백 안에 맞춘 뒤, 브라우저에서 깔끔한 외곽선을 추가하세요.</p>
-          </div>
-
-          <div class="tool-shell">
-            <section class="upload-panel" aria-labelledby="upload-title">
-              <h3 id="upload-title" data-i18n="upload.title">PNG 이미지 업로드</h3>
-              <div id="drop-zone" class="drop-zone" role="button" tabindex="0" aria-describedby="upload-help">
-                <span class="drop-icon" aria-hidden="true">+</span>
-                <strong data-i18n="upload.dropTitle">PNG, JPG, JPEG 파일을 여기에 놓으세요</strong>
-                <span id="upload-help" data-i18n="upload.help">여러 장을 선택할 수 있으며, 파일은 브라우저 밖으로 전송되지 않습니다.</span>
-                <button id="select-images-button" class="button button-primary" type="button" data-i18n="upload.selectButton">이미지 선택</button>
-              </div>
-              <input
-                id="image-input"
-                class="file-input"
-                type="file"
-                accept="image/png,image/jpeg"
-                multiple
-              />
-            </section>
-
-            <section class="options-panel" aria-labelledby="options-title">
-              <h3 id="options-title" data-i18n="options.title">설정</h3>
-              <div class="options-stack">
-                <div class="option-group">
-                  <h4 data-i18n="canvas.title">캔버스 맞춤(Canvas Fit)</h4>
-                  <div class="form-grid two-columns">
-                    <label for="canvas-width-input">
-                      <span data-i18n="canvas.width">캔버스 너비</span>
-                      <input id="canvas-width-input" type="number" min="1" step="1" value="740" />
-                    </label>
-                    <label for="canvas-height-input">
-                      <span data-i18n="canvas.height">캔버스 높이</span>
-                      <input id="canvas-height-input" type="number" min="1" step="1" value="640" />
-                    </label>
-                  </div>
-                  <p class="panel-note compact-note"><span data-i18n="canvas.safeMargin">안전 여백</span>: <strong id="safe-margin-value">40px</strong></p>
-                  <button id="apply-canvas-fit-button" class="button button-primary full-width-button" type="button" data-i18n="canvas.applyButton">
-                    캔버스 맞춤 적용
-                  </button>
-                </div>
-
-                <div class="option-group ogq-preset-group">
-                  <div class="preset-heading-row">
-                    <div>
-                      <p class="preset-kicker" data-i18n="preset.kicker">네이버 OGQ</p>
-                      <h4 data-i18n="preset.title">네이버 OGQ 심사 규격 이미지 만들기</h4>
-                    </div>
-                    <a class="preset-guide-link" href="guides/ogq-emoticon.html" data-i18n="preset.guideLink">규격 가이드</a>
-                  </div>
-                  <p class="panel-note compact-note" data-i18n="preset.description">
-                    실제 그림 영역을 기준으로 일반 이미지, 대표 이미지, 탭 이미지를 바로 만듭니다.
-                  </p>
-                  <div class="preset-actions ogq-preset-actions">
-                    <button id="create-ogq-image-button" class="button button-primary preset-action-wide" type="button" data-i18n="preset.ogqButton">
-                      740×640 일반 이미지 만들기
-                    </button>
-                    <button id="create-main-image-button" class="button button-secondary" type="button" data-i18n="preset.mainButton">
-                      240×240 대표 이미지 만들기
-                    </button>
-                    <button id="create-tab-image-button" class="button button-secondary" type="button" data-i18n="preset.tabButton">
-                      96×74 탭 이미지 만들기
-                    </button>
-                  </div>
-                  <p class="preset-disclaimer" data-i18n="preset.disclaimer">
-                    Image Toolkit은 OGQ 공식 도구가 아닙니다. 제출 전 최신 OGQ 가이드를 확인하세요.
-                  </p>
-                </div>
-
-                <div class="option-group">
-                  <h4 data-i18n="outline.title">외곽선(Outline)</h4>
-                  <div class="form-grid">
-                    <label for="thickness-input">
-                      <span class="label-row">
-                        <span data-i18n="outline.thickness">외곽선 두께</span>
-                        <strong><span id="thickness-value">8</span>px</strong>
-                      </span>
-                      <input id="thickness-input" type="range" min="1" max="32" value="8" />
-                    </label>
-                    <label for="color-input">
-                      <span data-i18n="outline.color">외곽선 색상</span>
-                      <input id="color-input" type="color" value="#ffffff" />
-                    </label>
-                  </div>
-                  <div class="option-actions">
-                    <button id="apply-outline-button" class="button button-primary" type="button" data-i18n="outline.applyButton">
-                      외곽선 적용
-                    </button>
-                    <button id="reset-options-button" class="button button-secondary" type="button" data-i18n="options.resetButton">
-                      설정 초기화
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <p id="process-summary" class="panel-note" data-i18n="process.initial">이미지를 올린 뒤 캔버스 맞춤이나 외곽선을 적용하세요.</p>
-            </section>
-          </div>
-
-          <section class="preview-section" aria-labelledby="preview-title">
-            <div class="section-row">
-              <div>
-                <h3 id="preview-title" data-i18n="preview.title">미리보기</h3>
-                <p id="upload-summary">0개 이미지 업로드됨</p>
-              </div>
-              <button id="download-zip-button" class="button button-secondary" type="button" disabled data-i18n="preview.downloadZip">
-                ZIP 일괄 다운로드
-              </button>
-            </div>
-            <div id="preview-empty" class="preview-empty">
-              <span class="preview-icon" aria-hidden="true"></span>
-              <strong data-i18n="preview.emptyTitle">아직 이미지가 없습니다</strong>
-              <span data-i18n="preview.emptyText">이미지를 올리면 원본, 캔버스 맞춤 결과, 외곽선 결과를 미리 볼 수 있습니다.</span>
-            </div>
-            <div id="preview-grid" class="preview-grid" aria-live="polite"></div>
-          </section>
-        </div>
-      </section>
-
-
-      <section id="current-features" class="features-section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow" data-i18n="features.eyebrow">지금 사용할 수 있어요</p>
-            <h2 data-i18n="features.title">현재 제공하는 기능</h2>
-            <p data-i18n="features.description">실제로 작동하고 브라우저에서 바로 사용할 수 있는 기능만 안내합니다.</p>
-          </div>
+          <div class="section-heading"><p class="eyebrow" data-ko="주요 이미지 도구" data-en="IMAGE TOOLS">주요 이미지 도구</p><h2 data-ko="필요한 이미지 작업부터 시작하세요" data-en="Start with the image task you need">필요한 이미지 작업부터 시작하세요</h2><p data-ko="각 도구는 독립된 작업 화면에서 실제 브라우저 처리와 다운로드를 제공합니다." data-en="Each tool provides real in-browser processing and downloads in a focused workspace.">각 도구는 독립된 작업 화면에서 실제 브라우저 처리와 다운로드를 제공합니다.</p></div>
           <div class="feature-grid">
-            <article class="feature-card"><strong>Canvas Fit</strong><span data-i18n="features.canvasFit">투명 여백을 제외한 실제 그림을 안전 여백 안에 맞춥니다.</span></article>
-            <article class="feature-card"><strong>PNG Outline</strong><span data-i18n="features.outline">두께와 색상을 선택해 PNG 외곽선을 만듭니다.</span></article>
-            <article class="feature-card"><strong>740×640</strong><span data-i18n="features.ogqStandard">네이버 OGQ 일반 이미지를 만듭니다.</span></article>
-            <article class="feature-card"><strong>240×240 main.png</strong><span data-i18n="features.mainImage">OGQ 대표 이미지를 자동 생성합니다.</span></article>
-            <article class="feature-card"><strong>96×74 tab.png</strong><span data-i18n="features.tabImage">그림이 점처럼 작아지지 않도록 탭 이미지를 만듭니다.</span></article>
-            <article class="feature-card"><strong>ZIP</strong><span data-i18n="features.zip">여러 이미지의 최신 결과를 한 번에 다운로드합니다.</span></article>
+            <article class="feature-card"><strong data-ko="이미지 크기 조절" data-en="Image Resizer">이미지 크기 조절</strong><span data-ko="종횡비를 유지하며 원하는 픽셀 크기로 확대하거나 축소합니다." data-en="Resize to exact pixels while preserving aspect ratio.">종횡비를 유지하며 원하는 픽셀 크기로 확대하거나 축소합니다.</span><a href="tools/image-resizer.html" data-ko="도구 열기 →" data-en="Open tool →">도구 열기 →</a></article>
+            <article class="feature-card"><strong data-ko="이미지 압축" data-en="Image Compressor">이미지 압축</strong><span data-ko="품질을 조절하고 원본과 실제 결과 용량을 비교합니다." data-en="Adjust quality and compare the source with the actual result size.">품질을 조절하고 원본과 실제 결과 용량을 비교합니다.</span><a href="tools/image-compressor.html" data-ko="도구 열기 →" data-en="Open tool →">도구 열기 →</a></article>
+            <article class="feature-card"><strong data-ko="이미지 변환" data-en="Image Converter">이미지 변환</strong><span data-ko="PNG, JPEG, WebP 형식을 서로 변환합니다." data-en="Convert among PNG, JPEG, and WebP formats.">PNG, JPEG, WebP 형식을 서로 변환합니다.</span><a href="tools/image-converter.html" data-ko="도구 열기 →" data-en="Open tool →">도구 열기 →</a></article>
+            <article class="feature-card"><strong data-ko="이미지 맞춤 및 자르기" data-en="Canvas Fit & Crop">이미지 맞춤 및 자르기</strong><span data-ko="전체 이미지를 맞추거나 초점 위치를 기준으로 실제로 자릅니다." data-en="Fit the whole image or crop around a chosen focal point.">전체 이미지를 맞추거나 초점 위치를 기준으로 실제로 자릅니다.</span><a href="tools/crop-fit.html" data-ko="도구 열기 →" data-en="Open tool →">도구 열기 →</a></article>
+            <article class="feature-card"><strong data-ko="이미지 외곽선" data-en="Image Outline">이미지 외곽선</strong><span data-ko="투명 이미지 경계에 원하는 색상과 두께를 적용합니다." data-en="Apply a chosen color and thickness around transparent edges.">투명 이미지 경계에 원하는 색상과 두께를 적용합니다.</span><a href="tools/image-outline.html" data-ko="도구 열기 →" data-en="Open tool →">도구 열기 →</a></article>
+            <article class="feature-card"><strong data-ko="일괄 이미지 처리" data-en="Batch Image Tool">일괄 이미지 처리</strong><span data-ko="여러 이미지에 같은 설정을 적용하고 결과를 ZIP으로 받습니다." data-en="Apply shared settings to multiple images and download a ZIP.">여러 이미지에 같은 설정을 적용하고 결과를 ZIP으로 받습니다.</span><a href="tools/batch-image.html" data-ko="도구 열기 →" data-en="Open tool →">도구 열기 →</a></article>
           </div>
         </div>
       </section>
 
-      <section class="future-section"><div class="container"><div class="section-heading"><p class="eyebrow">Learn</p><h2 data-ko="이미지 제작 가이드" data-en="Image production guides">이미지 제작 가이드</h2><p data-ko="규격만 맞추는 것이 아니라, 왜 이미지가 작아지거나 외곽선이 잘리는지 이해하고 해결하세요." data-en="Learn why artwork becomes tiny or outlines get clipped, not just which dimensions to enter.">규격 오류의 원인과 해결법을 함께 확인하세요.</p></div><div class="guide-grid"><article class="guide-card guide-card-featured"><h3 data-ko="네이버 OGQ 심사 규격 가이드" data-en="Naver OGQ submission size guide">네이버 OGQ 심사 규격 가이드</h3><p data-ko="740×640 일반 이미지, 240×240 main.png, 96×74 tab.png를 한 번에 준비하는 방법입니다." data-en="Prepare 740×640 artwork, 240×240 main.png, and 96×74 tab.png in one workflow.">OGQ 제출용 이미지 3종을 한 번에 준비하세요.</p><a href="guides/ogq-emoticon.html" data-ko="OGQ 가이드 보기 →" data-en="Read OGQ guide →">OGQ 가이드 보기 →</a></article><article class="guide-card"><h3 data-ko="Canvas Fit 이해하기" data-en="Understand Canvas Fit">Canvas Fit 이해하기</h3><p data-ko="투명 여백을 제외한 실제 그림을 안전 영역에 맞추는 원리를 설명합니다." data-en="How visible alpha bounds are fitted inside a safe area.">투명 여백을 제외한 실제 그림을 맞춥니다.</p><a href="guides/canvas-fit.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article><article class="guide-card"><h3 data-ko="외곽선 잘림 해결" data-en="Prevent outline clipping">외곽선 잘림 해결</h3><p data-ko="그림이 캔버스 끝에 붙을 때 생기는 문제와 해결 순서를 확인하세요." data-en="Why outlines clip at edges and the correct workflow.">잘림 원인과 해결 순서를 확인하세요.</p><a href="guides/png-outline.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article><article class="guide-card"><h3 data-ko="96×74 탭 이미지" data-en="96×74 tab image">96×74 탭 이미지</h3><p data-ko="1×2px 점처럼 축소되지 않게 만드는 정확한 안전 여백과 비율입니다." data-en="Correct scaling and margins that prevent tiny-dot results.">점처럼 작아지는 문제를 해결합니다.</p><a href="guides/tab-image.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article><article class="guide-card"><h3 data-ko="240×240 대표 이미지" data-en="240×240 main image">240×240 대표 이미지</h3><p data-ko="투명 배경과 비율을 유지하며 캐릭터를 크게 배치하는 방법입니다." data-en="Keep transparency and aspect ratio while filling the frame.">비율을 유지하며 크게 배치합니다.</p><a href="guides/main-image.html" data-ko="자세히 보기 →" data-en="Read more →">자세히 보기 →</a></article></div></div></section>
-    <section class="home-content" id="about-tool"><div class="container"><article class="article-card"><p class="eyebrow">도구와 이미지 작업 자료실</p><h2>반복적인 이미지 규격 작업을 한곳에서</h2><p>Image Toolkit은 캐릭터, 스티커, 이모티콘, 상품 이미지처럼 최종 캔버스 규격과 투명 여백을 반복해서 맞춰야 하는 사용자를 위한 브라우저 도구입니다. 일반 편집 프로그램에서 파일마다 캔버스를 만들고 위치를 조정하는 과정을 줄이고, 여러 이미지에 같은 기준을 적용한 뒤 결과를 비교하고 내려받을 수 있습니다.</p><p>현재 제공하는 기능은 PNG·JPG·JPEG 다중 업로드, alpha bounding box 기준 Canvas Fit, 크기와 안전 여백 preset, 투명 PNG 외곽선, 개별 PNG 및 최신 결과 ZIP 다운로드입니다. Crop이나 WebP 변환처럼 제공하지 않는 기능은 가이드에서도 지원 기능으로 안내하지 않습니다.</p><h2>기본 작업 흐름</h2><ol><li>원본 이미지를 별도로 보관하고 작업할 PNG 또는 JPG를 준비합니다.</li><li>한 장 이상 업로드한 뒤 원본 미리보기를 확인합니다.</li><li>목표 캔버스 크기를 입력하거나 필요한 preset을 선택합니다.</li><li>Canvas Fit 결과를 확인하고 필요할 때 외곽선을 적용합니다.</li><li>개별 PNG 또는 ZIP을 내려받아 픽셀 크기와 투명 배경을 최종 확인합니다.</li></ol><h2>원리를 이해하면 결과를 더 쉽게 고칠 수 있습니다</h2><div class="related-links"><a href="guides/image-aspect-ratio.html">이미지가 찌그러지지 않게 크기 맞추기</a><a href="guides/transparent-png.html">투명 PNG와 보이지 않는 여백 이해하기</a><a href="guides/image-troubleshooting.html">잘림·흐림·과도한 여백 문제 해결</a><a href="guides/image-file-privacy.html">이미지 파일이 처리되는 위치 확인하기</a><a href="guides/index.html">이미지 가이드 전체 보기 →</a></div></article></div></section></main>
+      <section class="platform-section">
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow" data-ko="플랫폼 규격" data-en="PLATFORM PRESETS">플랫폼 규격</p><h2 data-ko="플랫폼별 이미지 규격" data-en="Platform image presets">플랫폼별 이미지 규격</h2><p data-ko="현재 실제로 지원하는 플랫폼 규격에 맞춰 이미지를 빠르게 준비하세요." data-en="Prepare images quickly with platform sizes that are currently implemented.">현재 실제로 지원하는 플랫폼 규격에 맞춰 이미지를 빠르게 준비하세요.</p></div>
+          <div class="platform-grid"><article class="platform-card"><div><span class="platform-label">Naver OGQ</span><h3 data-ko="네이버 OGQ 이미지 규격" data-en="Naver OGQ image preset">네이버 OGQ 이미지 규격</h3><p data-ko="740×640 일반 이미지, 240×240 대표 이미지, 96×74 탭 이미지를 alpha 경계와 안전 여백 기준으로 준비합니다." data-en="Prepare 740×640 standard, 240×240 main, and 96×74 tab images using alpha bounds and safe margins.">740×640 일반 이미지, 240×240 대표 이미지, 96×74 탭 이미지를 alpha 경계와 안전 여백 기준으로 준비합니다.</p></div><a class="button button-secondary" href="presets/naver-ogq.html" data-ko="OGQ 도구 열기 →" data-en="Open OGQ tool →">OGQ 도구 열기 →</a></article></div>
+        </div>
+      </section>
 
-    <footer class="site-footer"><div class="container footer-stack"><div class="footer-layout"><span>Image Toolkit</span><span data-i18n="footer.text">간단하고 안전한 브라우저 기반 이미지 도구</span></div><div class="footer-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a><a href="mailto:yltoolkit@gmail.com">yltoolkit@gmail.com</a><a href="sitemap.xml">Sitemap</a></div><p class="footer-update" data-ko="최종 업데이트: 2026년 8월 25일" data-en="Last updated: August 25, 2026">최종 업데이트: 2026년 8월 25일</p></div></footer>
+      <section class="future-section home-guides-section">
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow" data-ko="이미지 제작 가이드" data-en="IMAGE GUIDES">이미지 제작 가이드</p><h2 data-ko="원리와 선택 기준을 알아보세요" data-en="Learn the principles and make better choices">원리와 선택 기준을 알아보세요</h2><p data-ko="범용 이미지 작업에서 자주 만나는 비율, 형식, 투명도, 외곽선과 일괄 처리 문제를 설명합니다." data-en="Understand the ratios, formats, transparency, outlines, and batch issues common to everyday image work.">범용 이미지 작업에서 자주 만나는 비율, 형식, 투명도, 외곽선과 일괄 처리 문제를 설명합니다.</p></div>
+          <div class="guide-grid home-guide-grid">
+            <article class="guide-card guide-card-featured"><h3 data-ko="이미지 크기와 종횡비" data-en="Image size and aspect ratio">이미지 크기와 종횡비</h3><p data-ko="이미지가 찌그러지지 않게 크기를 맞추는 기준을 설명합니다." data-en="Learn how to change dimensions without distorting an image.">이미지가 찌그러지지 않게 크기를 맞추는 기준을 설명합니다.</p><a href="guides/image-aspect-ratio.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card"><h3 data-ko="PNG, JPEG, WebP 선택" data-en="Choosing PNG, JPEG, or WebP">PNG, JPEG, WebP 선택</h3><p data-ko="투명도, 사진, 그래픽과 파일 용량에 맞는 형식을 비교합니다." data-en="Compare formats for transparency, photos, graphics, and file size.">투명도, 사진, 그래픽과 파일 용량에 맞는 형식을 비교합니다.</p><a href="guides/png-jpg-webp.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card"><h3 data-ko="Canvas Fit과 Crop 차이" data-en="Canvas Fit versus Crop">Canvas Fit과 Crop 차이</h3><p data-ko="전체 보존과 화면 채우기 중 어떤 방식을 선택할지 알아봅니다." data-en="Choose between preserving the full image and filling the canvas.">전체 보존과 화면 채우기 중 어떤 방식을 선택할지 알아봅니다.</p><a href="guides/canvas-fit-vs-crop.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card"><h3 data-ko="이미지 용량과 품질 관리" data-en="Managing image size and quality">이미지 용량과 품질 관리</h3><p data-ko="해상도, 압축 품질과 형식이 결과 용량에 미치는 영향을 확인합니다." data-en="See how resolution, compression quality, and format affect file size.">해상도, 압축 품질과 형식이 결과 용량에 미치는 영향을 확인합니다.</p><a href="tools/image-compressor.html" data-ko="압축 도구와 설명 보기 →" data-en="Open the compressor guide →">압축 도구와 설명 보기 →</a></article>
+            <article class="guide-card"><h3 data-ko="투명 PNG와 보이지 않는 여백" data-en="Transparent PNG and invisible padding">투명 PNG와 보이지 않는 여백</h3><p data-ko="alpha와 bounding box가 이미지 배치에 미치는 영향을 설명합니다." data-en="Learn how alpha and bounding boxes affect image placement.">alpha와 bounding box가 이미지 배치에 미치는 영향을 설명합니다.</p><a href="guides/transparent-png.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card"><h3 data-ko="이미지 외곽선" data-en="Image outlines">이미지 외곽선</h3><p data-ko="배경 대비, 적절한 두께와 가장자리 잘림 방지를 알아봅니다." data-en="Learn about contrast, thickness, and preventing clipped edges.">배경 대비, 적절한 두께와 가장자리 잘림 방지를 알아봅니다.</p><a href="guides/image-outline.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card"><h3 data-ko="여러 이미지 일괄 처리" data-en="Batch image processing">여러 이미지 일괄 처리</h3><p data-ko="파일명, 공통 설정, 결과 검수와 ZIP 작업 순서를 정리합니다." data-en="Review filenames, shared settings, result checks, and ZIP workflow.">파일명, 공통 설정, 결과 검수와 ZIP 작업 순서를 정리합니다.</p><a href="guides/batch-image-processing.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card"><h3 data-ko="이미지 문제 해결" data-en="Image troubleshooting">이미지 문제 해결</h3><p data-ko="찌그러짐, 잘림, 흐림과 과도한 여백을 증상별로 해결합니다." data-en="Resolve distortion, clipping, blur, and excessive padding.">찌그러짐, 잘림, 흐림과 과도한 여백을 증상별로 해결합니다.</p><a href="guides/image-troubleshooting.html" data-ko="가이드 읽기 →" data-en="Read guide →">가이드 읽기 →</a></article>
+            <article class="guide-card platform-guide-card"><h3 data-ko="네이버 OGQ 이미지 종합 가이드" data-en="Complete Naver OGQ image guide">네이버 OGQ 이미지 종합 가이드</h3><p data-ko="플랫폼 제출용 일반·대표·탭 이미지 작업 흐름을 한곳에서 확인합니다." data-en="Review the standard, main, and tab workflow for platform submission.">플랫폼 제출용 일반·대표·탭 이미지 작업 흐름을 한곳에서 확인합니다.</p><a href="guides/naver-ogq-image-guide.html" data-ko="플랫폼 가이드 읽기 →" data-en="Read platform guide →">플랫폼 가이드 읽기 →</a></article>
+          </div>
+          <p class="section-more-link"><a href="guides/index.html" data-ko="모든 이미지 가이드 보기 →" data-en="Browse all image guides →">모든 이미지 가이드 보기 →</a></p>
+        </div>
+      </section>
 
-    <script src="tools/outline/outline-engine.js?v=8"></script>
-    <script src="tools/outline/download-utils.js?v=7"></script>
-    <script src="tools/outline/zip-writer.js?v=7"></script>
-    <script src="script.js?v=13"></script>
-    <script src="site-common.js?v=2"></script>
+      <section class="home-content" id="about-tool">
+        <div class="container"><article class="article-card"><p class="eyebrow" data-ko="ImageToolkit 소개" data-en="ABOUT IMAGETOOLKIT">ImageToolkit 소개</p><h2 data-ko="설치 없이 끝내는 일반 이미지 작업" data-en="Everyday image work without installation">설치 없이 끝내는 일반 이미지 작업</h2><p data-ko="ImageToolkit은 사진, 캐릭터, 스티커와 상품 이미지의 크기 조절, 압축, 형식 변환, 캔버스 맞춤, 외곽선과 일괄 작업을 위한 브라우저 도구 모음입니다. 일반 도구와 플랫폼 규격을 분리해 필요한 작업을 바로 찾을 수 있습니다." data-en="ImageToolkit is a browser-based collection for resizing, compressing, converting, fitting, outlining, and batch-processing photos, characters, stickers, and product images. General tools and platform presets are separated so you can start with the task you need.">ImageToolkit은 사진, 캐릭터, 스티커와 상품 이미지의 크기 조절, 압축, 형식 변환, 캔버스 맞춤, 외곽선과 일괄 작업을 위한 브라우저 도구 모음입니다. 일반 도구와 플랫폼 규격을 분리해 필요한 작업을 바로 찾을 수 있습니다.</p><h2 data-ko="기본 작업 흐름" data-en="Basic workflow">기본 작업 흐름</h2><ol><li data-ko="원본을 별도로 보관하고 PNG, JPEG 또는 WebP를 준비합니다." data-en="Keep a separate original and prepare a PNG, JPEG, or WebP file.">원본을 별도로 보관하고 PNG, JPEG 또는 WebP를 준비합니다.</li><li data-ko="목적에 맞는 독립 도구나 플랫폼 규격을 엽니다." data-en="Open the tool or platform preset that matches your task.">목적에 맞는 독립 도구나 플랫폼 규격을 엽니다.</li><li data-ko="설정을 적용하고 미리보기, 픽셀 크기, 용량과 투명도를 확인합니다." data-en="Apply settings and check the preview, dimensions, file size, and transparency.">설정을 적용하고 미리보기, 픽셀 크기, 용량과 투명도를 확인합니다.</li><li data-ko="개별 결과 또는 여러 이미지 ZIP을 다운로드합니다." data-en="Download an individual result or a multi-image ZIP.">개별 결과 또는 여러 이미지 ZIP을 다운로드합니다.</li></ol></article></div>
+      </section>
+
+      <section class="trust-section">
+          <div class="container trust-grid"><article class="trust-card"><p class="eyebrow" data-ko="브라우저 파일 처리" data-en="BROWSER PROCESSING">브라우저 파일 처리</p><h2 data-ko="이미지 파일은 기기 안에서 처리됩니다" data-en="Image files stay on your device">이미지 파일은 기기 안에서 처리됩니다</h2><p data-ko="이미지 변환은 현재 탭의 File API, Canvas와 브라우저 메모리에서 실행되며 이미지 파일을 별도 서버로 업로드하지 않습니다." data-en="Image transformations run in this tab using the File API, Canvas, and browser memory; files are not uploaded to a separate server.">이미지 변환은 현재 탭의 File API, Canvas와 브라우저 메모리에서 실행되며 이미지 파일을 별도 서버로 업로드하지 않습니다.</p><a href="guides/image-file-privacy.html" data-ko="파일 처리 방식 자세히 보기 →" data-en="Learn how files are processed →">파일 처리 방식 자세히 보기 →</a></article><article class="trust-card"><p class="eyebrow">HELP</p><h2 data-ko="도움말과 관련 페이지" data-en="Help and related pages">도움말과 관련 페이지</h2><p data-ko="사용 중 문제가 생기면 자주 묻는 질문과 문제 해결 가이드를 먼저 확인하세요." data-en="If something goes wrong, start with the FAQ and troubleshooting guide.">사용 중 문제가 생기면 자주 묻는 질문과 문제 해결 가이드를 먼저 확인하세요.</p><div class="related-links"><a href="faq.html" data-ko="자주 묻는 질문 →" data-en="Frequently asked questions →">자주 묻는 질문 →</a><a href="guides/image-troubleshooting.html" data-ko="이미지 문제 해결 →" data-en="Image troubleshooting →">이미지 문제 해결 →</a><a href="contact.html" data-ko="문의하기 →" data-en="Contact →">문의하기 →</a></div></article></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-stack"><div class="footer-layout"><span>Image Toolkit</span><span data-ko="간단하고 안전한 브라우저 이미지 도구" data-en="Simple, private image tools for your browser">간단하고 안전한 브라우저 이미지 도구</span></div><div class="footer-links"><a href="tools/index.html" data-ko="도구" data-en="Tools">도구</a><a href="presets/index.html" data-ko="플랫폼 규격" data-en="Presets">플랫폼 규격</a><a href="guides/index.html" data-ko="가이드" data-en="Guides">가이드</a><a href="privacy.html" data-ko="개인정보처리방침" data-en="Privacy">개인정보처리방침</a><a href="terms.html" data-ko="이용약관" data-en="Terms">이용약관</a><a href="contact.html" data-ko="문의" data-en="Contact">문의</a><a href="sitemap.xml">Sitemap</a></div><p class="footer-update" data-ko="최종 업데이트: 2026년 9월 15일" data-en="Last updated: September 15, 2026">최종 업데이트: 2026년 9월 15일</p></div></footer>
+    <script src="site-common.js?v=3"></script>
   </body>
 </html>
-
-
-
-
-
-

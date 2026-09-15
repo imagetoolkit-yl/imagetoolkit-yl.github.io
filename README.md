@@ -15,6 +15,9 @@ Image Toolkit is a bilingual, browser-based image editing tool. Image processing
 
 ## 주요 기능 / Features
 
+- 독립 이미지 크기 조절, 압축, PNG·JPEG·WebP 변환
+- Fit과 초점 위치 기반 실제 Crop
+- 최대 30개 이미지 크기·형식·외곽선 일괄 처리 및 ZIP 다운로드
 - PNG, JPG, JPEG 다중 업로드 / Multiple image upload
 - 투명 알파 영역 기준 캔버스 맞춤 / Alpha-bounding-box Canvas Fit
 - 기본 `740 x 640`, 사방 40px 안전 여백
@@ -71,7 +74,19 @@ imagetoolkit-yl.github.io/
 ├── style.css
 ├── script.js
 ├── README.md
+├── presets/
+│   └── naver-ogq.html
 └── tools/
+    ├── index.html
+    ├── image-resizer.html
+    ├── image-compressor.html
+    ├── image-converter.html
+    ├── crop-fit.html
+    ├── image-outline.html
+    ├── batch-image.html
+    ├── shared/
+    │   ├── image-engine.js
+    │   └── tool-page.js
     └── outline/
         ├── download-utils.js
         ├── outline-engine.js
@@ -80,6 +95,8 @@ imagetoolkit-yl.github.io/
 
 ## 현재 제공 기능 / Current Features
 
+- Image Resizer, Image Compressor, Image Converter
+- Crop & Canvas Fit, Image Outline, Batch Image Tool
 - Canvas Fit with alpha-bounds detection and safe margins
 - PNG outline generation
 - Naver OGQ 740×640 standard image
@@ -92,7 +109,7 @@ imagetoolkit-yl.github.io/
 - About, Guide, FAQ, Privacy, Terms, Contact
 - Six original image-production guides
 - robots.txt, sitemap.xml, 404 page, favicon
-- No AdSense code or ads.txt publisher ID is included yet. Add only after an actual publisher ID is available.
+- Existing AdSense script and `ads.txt` publisher ID are preserved.
 
 ## OGQ 가이드 / OGQ Guide
 
