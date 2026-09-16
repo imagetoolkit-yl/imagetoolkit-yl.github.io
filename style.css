@@ -912,6 +912,12 @@ input[type="number"] {
 /* Homepage information architecture */
 .home-tools-section{background:var(--section-blue);border-color:#dbe6f5}
 .home-tools-section .feature-card{grid-template-rows:auto 1fr auto;min-height:190px}
+.home-tools-section .feature-card:nth-child(1){background:#f8fbff;border-color:#dce8f5}
+.home-tools-section .feature-card:nth-child(2){background:#f5fbfa;border-color:#d8ebe7}
+.home-tools-section .feature-card:nth-child(3){background:#faf8ff;border-color:#e4ddf2}
+.home-tools-section .feature-card:nth-child(4){background:#f6fbf8;border-color:#dcebe2}
+.home-tools-section .feature-card:nth-child(5){background:#f6faff;border-color:#dbe7f2}
+.home-tools-section .feature-card:nth-child(6){background:#f7f9fc;border-color:#dfe5ec}
 .home-tools-section .feature-card a,.section-more-link a,.trust-card a{color:var(--primary);font-weight:750}
 .home-tools-section .feature-card,.home-guide-grid .guide-card{transition:border-color .16s ease,transform .16s ease}
 .home-tools-section .feature-card:hover,.home-guide-grid .guide-card:hover{border-color:#b9c9df;transform:translateY(-1px)}
@@ -920,7 +926,7 @@ input[type="number"] {
 .platform-card{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:28px;background:var(--surface);border:1px solid #cfe2da;border-radius:10px;box-shadow:var(--shadow)}
 .platform-card h3{margin:6px 0 8px;font-size:24px}.platform-card p{margin:0;color:var(--muted);line-height:1.65}.platform-card .button{flex:0 0 auto}.platform-card .platform-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 22px;border-color:var(--primary);background:var(--primary);color:#fff;line-height:1;white-space:nowrap}.platform-card .platform-cta:hover{border-color:var(--primary-dark);background:var(--primary-dark)}.platform-card .platform-cta:focus-visible{outline:3px solid rgba(35,104,232,.28);outline-offset:3px}
 .platform-label{color:var(--primary);font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
-.home-guides-section{padding:64px 0;background:var(--section-neutral);border-bottom:1px solid var(--line)}.home-guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.home-guide-grid .guide-card{display:flex;min-height:220px;flex-direction:column}.home-guide-grid .guide-card a{margin-top:auto}.platform-guide-card{border-style:dashed}.platform-guide-card h3{text-wrap:balance}html[lang="ko"] .platform-guide-card h3{font-size:20px;word-break:keep-all}.section-more-link{margin:24px 0 0}
+.home-guides-section{padding:64px 0;background:var(--section-neutral);border-bottom:1px solid var(--line)}.home-guide-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.home-guide-grid .guide-card{display:flex;min-height:220px;flex-direction:column}.home-guide-grid .guide-card:nth-child(4n+1){background:#f8fbff;border-color:#dfe8f2}.home-guide-grid .guide-card:nth-child(4n+2){background:#fbfbfc;border-color:#e3e6eb}.home-guide-grid .guide-card:nth-child(4n+3){background:#f5fbf9;border-color:#dcebe5}.home-guide-grid .guide-card:nth-child(4n){background:#faf8ff;border-color:#e5dff0}.home-guide-grid .guide-card a{margin-top:auto}.platform-guide-card{border-style:solid}.platform-guide-card h3{text-wrap:balance}html[lang="ko"] .platform-guide-card h3{font-size:20px;word-break:keep-all}.section-more-link{margin:24px 0 0}
 .home-content{background:var(--surface);border-bottom:1px solid var(--line)}
 .trust-section{padding:64px 0 72px;background:#f6f8f7}.trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.trust-card{padding:28px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}.trust-card:first-child{background:#f7fcf9;border-color:#d2e5dc}.trust-card h2{font-size:25px}.trust-card p{color:var(--muted);line-height:1.7}.trust-card .related-links{display:grid;gap:9px}
 .section-heading,.page-hero{scroll-margin-top:88px}
